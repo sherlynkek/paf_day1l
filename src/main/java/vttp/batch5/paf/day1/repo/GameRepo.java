@@ -18,15 +18,16 @@ public class GameRepo {
     private JdbcTemplate template;
     
     public List<Game> getGames(int limit) {
+        /// select * from game where limit ?
         SqlRowSet rs = template.queryForRowSet(SQL_SELECT_GAME_LIMIT, limit);
         List<Game> results = new LinkedList<>();
-        
-        while(rs.next()) {
+
+        // will return true if there are records to read
+        while (rs.next()) {
             results.add(Game.toMovie(rs));
         }
 
         return results;
-
     }
 
     // public List<Game> getGames() {
