@@ -17,13 +17,13 @@ import org.springframework.http.HttpStatusCode;
 @Controller
 @RequestMapping
 public class GameController {
-    
+
     @Autowired
-    private GameService gameService;
+    private GameService gameSvc;
 
     @GetMapping("/games")
     public ModelAndView getGames(@RequestParam(defaultValue = "5") int count) {
-        List<Game> games = gameService.getGames(count);
+        List<Game> games = gameSvc.getGames(count);
         ModelAndView mav = new ModelAndView("games");
         mav.addObject("games", games);
         mav.setStatus(HttpStatusCode.valueOf(200));

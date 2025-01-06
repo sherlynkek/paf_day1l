@@ -3,6 +3,7 @@ package vttp.batch5.paf.day1.model;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class Game {
+
     private int gameId;
     private String name;
     private int year;
@@ -10,7 +11,6 @@ public class Game {
     private int usersRated;
     private String url;
     private String image;
-
 
     public int getGameId() {
         return gameId;
@@ -63,7 +63,7 @@ public class Game {
         m.setGameId(rs.getInt("gid"));
         m.setImage(rs.getString("image"));
         m.setRanking(rs.getInt("ranking"));
-        m.setUsersRated(rs.getInt("user_rated"));
+        m.setUsersRated(rs.getInt("users_rated"));
         return m;
     }
     
