@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 import vttp.batch5.paf.day1.model.Game;
-import static vttp.batch5.paf.day1.repo.Queries.SQL_SELECT_GAME;
+// import static vttp.batch5.paf.day1.repo.Queries.SQL_SELECT_GAME;
 import static vttp.batch5.paf.day1.repo.Queries.SQL_SELECT_GAME_LIMIT;
 
 @Repository
@@ -43,7 +43,7 @@ public class GameRepo {
     // }
 
     public List<Game> getGames() {
-        return getGames(5);
+        return getGames();
     }
 }
 
